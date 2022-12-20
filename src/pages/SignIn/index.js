@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { Input } from "../../components/Input";
 import { LogButton } from "../../components/LogButton";
+
+import { UserContext } from "../../context/userContext";
 
 import { api } from "../../services/api";
 
@@ -16,6 +18,7 @@ export function SignInPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+  const {setUserData} = useContext(UserContext);
 
   function handleLogIn(e) {
     e.preventDefault();
@@ -26,8 +29,15 @@ export function SignInPage() {
         password
       })
       .then((res) => {
-        console.log(res);
-        navigate('/habitos')
+        setUserData({
+          id: res.data.id,
+          name: res.data.name,
+          image: res.data.image,
+          email: res.data.email,
+          password: res.data.password,
+          token: res.data.token,
+        })
+        navigate('/hoje')
       })
       .catch(() => {
         alert('Erro ao efetuar login, tente novamente');

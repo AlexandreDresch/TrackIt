@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
 
 import { SignInPage } from "../pages/SignIn";
 import { SignUpPage } from "../pages/SignUp";
-import { Home } from "../pages/Home";
+import { Habits } from "../pages/Habits";
 
 export default function Routes() {
     return (
@@ -10,7 +10,7 @@ export default function Routes() {
         <Switch>
           <Route element={<SignInPage />} path="/" />      
           <Route element={<SignUpPage />} path="/cadastro" /> 
-          <Route element={<Home />} path="/habitos" />     
+          <Route element={<Habits />} path="/habitos" />     
         </Switch>
       </BrowserRouter>
     );

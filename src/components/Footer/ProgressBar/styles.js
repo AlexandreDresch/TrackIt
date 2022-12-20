@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 375px;
-    
+    width: 91px;
+    position: sticky;
+    margin-bottom: 30px;   
 `;

@@ -1,16 +1,22 @@
+import { useContext } from 'react';
+
+import { UserContext } from '../../context/userContext';
+
+import LogoText from '../../assets/logoText.svg';
+
 import {
     Container,
     LogoImage,
     Image,
 } from './styles';
 
-import LogoText from '../../assets/logoText.svg';
-
 export function Header() {
+    const { userData } = useContext(UserContext);
+
     return (
         <Container>
             <LogoImage src={LogoText}/>
-            <Image src={'https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg'}/>
+            <Image src={userData.image}/>
         </Container>
     )
 }

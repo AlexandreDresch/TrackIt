@@ -30,8 +30,7 @@ export function SignUpPage() {
           image,
           password
         })
-        .then((res) => {
-          console.log(res);
+        .then(() => {
           navigate("/");
         })
         .catch(() => {
