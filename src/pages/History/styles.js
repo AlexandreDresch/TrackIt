@@ -6,7 +6,7 @@ export const Container = styled.div`
 
 export const ContentContainer = styled.div`
     padding: 0 17px;
-    min-height: 80vh;
+    min-height: 90vh;
 `;
 
 export const Title = styled.h1`
