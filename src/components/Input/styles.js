@@ -11,9 +11,9 @@ export const Container = styled.input`
   font-size: 20px;
 
   ::placeholder {
-    font-family: 'Lexend Deca';
+    font-family: "Lexend Deca";
     font-weight: 400;
     font-size: 20px;
-    color: #DBDBDB;
+    color: #dbdbdb;
   }
 `;

@@ -27,4 +27,3 @@ export const ContentContainer = styled.div`
   padding: 0 17px;
   min-height: 80vh;
 `;
-

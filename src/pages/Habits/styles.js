@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 375px;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 `;
 
 export const TitleContainer = styled.div`

@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Input } from "../../components/Input";
 import { LogButton } from "../../components/LogButton";
 
+import { api } from "../../services/api";
+
 import Logo from "../../assets/logo.svg";
 
 import { Container, Image, FormContainer, Text } from "./styles";
-
-import { api } from "../../services/api";
 
 export function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -22,13 +22,18 @@ export function SignUpPage() {
   function handleCreateAccount(e) {
     e.preventDefault();
     setIsLoading(true);
-    if (validateEmail(email) && password.length >= 6 && name.length >= 2 && validateImage(image)) {
+    if (
+      validateEmail(email) &&
+      password.length >= 6 &&
+      name.length >= 2 &&
+      validateImage(image)
+    ) {
       api
         .post("/auth/sign-up", {
           email,
           name,
           image,
-          password
+          password,
         })
         .then(() => {
           navigate("/");
@@ -88,7 +93,11 @@ export function SignUpPage() {
           type={"text"}
           dataTest={"user-image-input"}
         />
-        <LogButton text={"Cadastrar"} disabled={isLoading} dataTest={"signup-btn"}/>
+        <LogButton
+          text={"Cadastrar"}
+          disabled={isLoading}
+          dataTest={"signup-btn"}
+        />
       </FormContainer>
 
       <Link to={"/"} data-test="login-link">

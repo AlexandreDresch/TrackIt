@@ -12,7 +12,7 @@ export function UserProgressProvider({ children }) {
         doneHabits,
         setDoneHabits,
         percentage,
-        setPercentage
+        setPercentage,
       }}
     >
       {children}

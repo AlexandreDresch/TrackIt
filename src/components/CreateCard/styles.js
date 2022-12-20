@@ -28,12 +28,12 @@ export const Button = styled.button`
   justify-content: center;
   width: 84px;
   height: 35px;
-  background-color: ${(props) => (props.color)};
+  background-color: ${(props) => props.color};
   border-radius: 5px;
   font-family: "Lexend Deca";
   font-weight: 400;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  color: ${(props) => (props.color === '#52b6ff' ? "#FFFFFF" : "#52B6FF")};
+  color: ${(props) => (props.color === "#52b6ff" ? "#FFFFFF" : "#52B6FF")};
 `;

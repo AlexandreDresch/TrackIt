@@ -1,7 +1,4 @@
-import { useContext } from "react";
 import { TrashSharp } from "react-ionicons";
-import { UserContext } from "../../context/userContext";
-import { api } from "../../services/api";
 
 import { weekDays } from "../CreateCard";
 
@@ -13,8 +10,7 @@ import {
   WeekButton,
 } from "./styles";
 
-export function HabitCard({ text, selectedDays, onClick }) { 
-
+export function HabitCard({ text, selectedDays, onClick }) {
   return (
     <Container data-test="habit-container">
       <Text data-test="habit-name">{text}</Text>

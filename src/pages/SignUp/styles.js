@@ -15,16 +15,16 @@ export const Image = styled.img`
 `;
 
 export const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
 `;
 
 export const Text = styled.p`
-font-family: 'Lexend Deca';
-font-weight: 400;
-font-size: 14px;
-text-decoration-line: underline;
-color: #52B6FF;
-cursor: pointer;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration-line: underline;
+  color: #52b6ff;
+  cursor: pointer;
 `;

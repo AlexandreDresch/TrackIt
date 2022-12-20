@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 340px;
   padding: 15px;
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 10px;
 `;
@@ -18,12 +18,12 @@ export const Text = styled.h2`
 `;
 
 export const TrashButton = styled.button`
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export const WeekButtonContainer = styled.div`

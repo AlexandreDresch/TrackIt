@@ -22,7 +22,6 @@ import { UserProgressContext } from "../../context/userProgressContext";
 
 export function Today() {
   const [todayHabits, setTodayHabits] = useState([]);
-  const [todayHabitsDone, setTodayHabitsDone] = useState(0);
 
   const { userData } = useContext(UserContext);
   const { doneHabits, setDoneHabits, percentage, setPercentage } =

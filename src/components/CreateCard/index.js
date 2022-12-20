@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 
 import { Input } from "../../components/Input";
+import { WeekButton } from "./WeekButton";
+
 import { UserContext } from "../../context/userContext";
 
 import { api } from "../../services/api";
@@ -12,7 +14,6 @@ import {
   ButtonsContainer,
   Button,
 } from "./styles";
-import { WeekButton } from "./WeekButton";
 
 export const weekDays = [
   { id: 7, name: "D" },
@@ -25,7 +26,7 @@ export const weekDays = [
 ];
 
 export function CreateCard({ habit, setHabit, cancel, getHabits }) {
-  const [selectedDays, setSelectedDays] = useState([]);  
+  const [selectedDays, setSelectedDays] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const { userData } = useContext(UserContext);
@@ -45,12 +46,12 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
             headers: {
               Authorization: `Bearer ${userData.token}`,
             },
-          }          
+          }
         )
         .then(() => {
           setIsLoading(false);
           getHabits();
-          setHabit('')
+          setHabit("");
           cancel();
         })
         .catch(() => {
@@ -77,7 +78,7 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
   }
 
   return (
-    <Container  data-test="habit-create-container">
+    <Container data-test="habit-create-container">
       <Input
         placeholder={"nome do hábito"}
         onChange={(e) => setHabit(e.target.value)}
@@ -98,11 +99,22 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
         ))}
       </WeekButtonContainer>
       <ButtonsContainer>
-        <Button color={"transparent"} onClick={cancel} disabled={isLoading} data-test="habit-create-cancel-btn">
+        <Button
+          color={"transparent"}
+          onClick={cancel}
+          disabled={isLoading}
+          data-test="habit-create-cancel-btn"
+        >
           Cancelar
         </Button>
 
-        <Button color={"#52b6ff"} onClick={handleCreateCard} type="submit" disabled={isLoading} data-test="habit-create-save-btn">
+        <Button
+          color={"#52b6ff"}
+          onClick={handleCreateCard}
+          type="submit"
+          disabled={isLoading}
+          data-test="habit-create-save-btn"
+        >
           {isLoading ? (
             <ThreeDots
               height="40"

@@ -18,38 +18,39 @@ export function SignInPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const {setUserData} = useContext(UserContext);
+  const { setUserData } = useContext(UserContext);
 
   function handleLogIn(e) {
     e.preventDefault();
     setIsLoading(true);
-    if(validateEmail(email) && password.length >= 6) {
-      api.post('/auth/login', {
-        email,
-        password
-      })
-      .then((res) => {
-        setUserData({
-          id: res.data.id,
-          name: res.data.name,
-          image: res.data.image,
-          email: res.data.email,
-          password: res.data.password,
-          token: res.data.token,
+    if (validateEmail(email) && password.length >= 6) {
+      api
+        .post("/auth/login", {
+          email,
+          password,
         })
-        navigate('/hoje')
-      })
-      .catch(() => {
-        alert('Erro ao efetuar login, tente novamente');
-        setIsLoading(false);
-      })
+        .then((res) => {
+          setUserData({
+            id: res.data.id,
+            name: res.data.name,
+            image: res.data.image,
+            email: res.data.email,
+            password: res.data.password,
+            token: res.data.token,
+          });
+          navigate("/hoje");
+        })
+        .catch(() => {
+          alert("Erro ao efetuar login, tente novamente");
+          setIsLoading(false);
+        });
     } else {
-      alert('Erro ao efetuar login, tente novamente');
+      alert("Erro ao efetuar login, tente novamente");
       setIsLoading(false);
-    }    
+    }
   }
 
-  function validateEmail(email){
+  function validateEmail(email) {
     return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
   }
 
@@ -74,7 +75,11 @@ export function SignInPage() {
           type={"password"}
           dataTest={"password-input"}
         />
-        <LogButton text={"Entrar"} disabled={isLoading} dataTest={"login-btn"}/>
+        <LogButton
+          text={"Entrar"}
+          disabled={isLoading}
+          dataTest={"login-btn"}
+        />
       </FormContainer>
 
       <Link to={"/cadastro"} data-test="signup-link">

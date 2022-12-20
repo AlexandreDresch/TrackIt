@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { CreateCard } from "../../components/CreateCard";
 
+import { CreateCard } from "../../components/CreateCard";
 import { Footer } from "../../components/Footer";
 import { HabitCard } from "../../components/HabitCard";
 import { Header } from "../../components/Header";
+
 import { UserContext } from "../../context/userContext";
 import { api } from "../../services/api";
 
@@ -33,12 +34,15 @@ export function Habits() {
 
   function handleDeleteHabit(id) {
     if (window.confirm("Você tem certeza que deseja excluir esse hábito?")) {
-      api.delete(`/habits/${id}`, {
-        headers: {
-          Authorization: `Bearer ${userData.token}`,
-        },
-      })
-      .then(() => {getHabits()});
+      api
+        .delete(`/habits/${id}`, {
+          headers: {
+            Authorization: `Bearer ${userData.token}`,
+          },
+        })
+        .then(() => {
+          getHabits();
+        });
     }
   }
 
@@ -65,7 +69,9 @@ export function Habits() {
       <TitleContainer>
         <Title>Meus hábitos</Title>
 
-        <Button onClick={handleOpenCreateCard}  data-test="habit-create-btn">+</Button>
+        <Button onClick={handleOpenCreateCard} data-test="habit-create-btn">
+          +
+        </Button>
       </TitleContainer>
 
       <ContentContainer>

@@ -1,5 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+
 import { Container, ContentContainer, Title, Text } from "./styles";
 
 export function History() {
