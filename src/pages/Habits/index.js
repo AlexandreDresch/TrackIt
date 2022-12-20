@@ -32,7 +32,7 @@ export function Habits() {
   }
 
   function handleDeleteHabit(id) {
-    if (window.confirm("Are you sure you want to delete this habit?")) {
+    if (window.confirm("Você tem certeza que deseja excluir esse hábito?")) {
       api.delete(`/habits/${id}`, {
         headers: {
           Authorization: `Bearer ${userData.token}`,

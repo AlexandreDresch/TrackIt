@@ -98,11 +98,11 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
         ))}
       </WeekButtonContainer>
       <ButtonsContainer>
-        <Button color={"transparent"} onClick={cancel}  data-test="habit-create-cancel-btn">
+        <Button color={"transparent"} onClick={cancel} disabled={isLoading} data-test="habit-create-cancel-btn">
           Cancelar
         </Button>
 
-        <Button color={"#52b6ff"} onClick={handleCreateCard} type="submit" data-test="habit-create-save-btn">
+        <Button color={"#52b6ff"} onClick={handleCreateCard} type="submit" disabled={isLoading} data-test="habit-create-save-btn">
           {isLoading ? (
             <ThreeDots
               height="40"

@@ -1,6 +1,13 @@
 import { Container } from "./styles";
 
-export function Input({ placeholder, onChange, value, disabled, type, dataTest }) {
+export function Input({
+  placeholder,
+  onChange,
+  value,
+  disabled,
+  type,
+  dataTest,
+}) {
   return (
     <Container
       placeholder={placeholder}
