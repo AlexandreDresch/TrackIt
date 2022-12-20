@@ -14,7 +14,7 @@ export function Header() {
     const { userData } = useContext(UserContext);
 
     return (
-        <Container>
+        <Container data-test="header">
             <LogoImage src={LogoText}/>
             <Image src={userData.image}/>
         </Container>

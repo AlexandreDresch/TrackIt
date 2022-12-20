@@ -65,7 +65,7 @@ export function Habits() {
       <TitleContainer>
         <Title>Meus hábitos</Title>
 
-        <Button onClick={handleOpenCreateCard}>+</Button>
+        <Button onClick={handleOpenCreateCard}  data-test="habit-create-btn">+</Button>
       </TitleContainer>
 
       <ContentContainer>

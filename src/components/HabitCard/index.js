@@ -16,10 +16,10 @@ import {
 export function HabitCard({ text, selectedDays, onClick }) { 
 
   return (
-    <Container>
-      <Text>{text}</Text>
+    <Container data-test="habit-container">
+      <Text data-test="habit-name">{text}</Text>
 
-      <TrashButton onClick={onClick}>
+      <TrashButton onClick={onClick} data-test="habit-delete-btn">
         <TrashSharp />
       </TrashButton>
 
@@ -28,6 +28,7 @@ export function HabitCard({ text, selectedDays, onClick }) {
           <WeekButton
             key={weekDay.id}
             isSelected={selectedDays.includes(weekDay.id)}
+            data-test="habit-day"
           >
             {weekDay.name}
           </WeekButton>

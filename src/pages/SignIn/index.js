@@ -64,6 +64,7 @@ export function SignInPage() {
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLoading}
           type={"email"}
+          dataTest={"email-input"}
         />
         <Input
           placeholder={"senha"}
@@ -71,11 +72,12 @@ export function SignInPage() {
           onChange={(e) => setPassword(e.target.value)}
           disabled={isLoading}
           type={"password"}
+          dataTest={"password-input"}
         />
-        <LogButton text={"Entrar"} disabled={isLoading} />
+        <LogButton text={"Entrar"} disabled={isLoading} dataTest={"login-btn"}/>
       </FormContainer>
 
-      <Link to={"/cadastro"}>
+      <Link to={"/cadastro"} data-test="signup-link">
         <Text>Não tem uma conta? Cadastre-se!</Text>
       </Link>
     </Container>

@@ -62,6 +62,7 @@ export function SignUpPage() {
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLoading}
           type={"email"}
+          dataTest={"email-input"}
         />
         <Input
           placeholder={"senha"}
@@ -69,6 +70,7 @@ export function SignUpPage() {
           onChange={(e) => setPassword(e.target.value)}
           disabled={isLoading}
           type={"password"}
+          dataTest={"password-input"}
         />
         <Input
           placeholder={"nome"}
@@ -76,6 +78,7 @@ export function SignUpPage() {
           onChange={(e) => setName(e.target.value)}
           disabled={isLoading}
           type={"text"}
+          dataTest={"user-name-input"}
         />
         <Input
           placeholder={"foto"}
@@ -83,11 +86,12 @@ export function SignUpPage() {
           onChange={(e) => setImage(e.target.value)}
           disabled={isLoading}
           type={"text"}
+          dataTest={"user-image-input"}
         />
-        <LogButton text={"Cadastrar"} disabled={isLoading} />
+        <LogButton text={"Cadastrar"} disabled={isLoading} dataTest={"signup-btn"}/>
       </FormContainer>
 
-      <Link to={"/"}>
+      <Link to={"/"} data-test="login-link">
         <Text>Já tem uma conta? Faça login!</Text>
       </Link>
     </Container>

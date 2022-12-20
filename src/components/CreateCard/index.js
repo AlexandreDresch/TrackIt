@@ -77,13 +77,14 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
   }
 
   return (
-    <Container>
+    <Container  data-test="habit-create-container">
       <Input
         placeholder={"nome do hábito"}
         onChange={(e) => setHabit(e.target.value)}
         value={habit}
         disabled={isLoading}
         type={"text"}
+        dataTest={"habit-name-input"}
       />
       <WeekButtonContainer>
         {weekDays.map((weekDay) => (
@@ -97,11 +98,11 @@ export function CreateCard({ habit, setHabit, cancel, getHabits }) {
         ))}
       </WeekButtonContainer>
       <ButtonsContainer>
-        <Button color={"transparent"} onClick={cancel}>
+        <Button color={"transparent"} onClick={cancel}  data-test="habit-create-cancel-btn">
           Cancelar
         </Button>
 
-        <Button color={"#52b6ff"} onClick={handleCreateCard} type="submit">
+        <Button color={"#52b6ff"} onClick={handleCreateCard} type="submit" data-test="habit-create-save-btn">
           {isLoading ? (
             <ThreeDots
               height="40"

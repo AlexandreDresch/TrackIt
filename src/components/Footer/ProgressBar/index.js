@@ -10,13 +10,13 @@ import { UserProgressContext } from "../../../context/userProgressContext";
 import { Container } from './styles';
 
 export function ProgressBar() {
-  const {progressData} = useContext(UserProgressContext)
+  const {percentage} = useContext(UserProgressContext)
 
   return (
-    <Container>
+    <Container data-test="today-link">
       <Link to={'/hoje'}>
       <CircularProgressbar
-        value={progressData}
+        value={percentage}
         text={`Hoje`}
         background
         backgroundPadding={6}
